@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_3" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.3">
+	<Header>
+		<Application name="JPMML-SkLearn" version="1.5.13"/>
+		<Timestamp>2019-05-09T01:46:57Z</Timestamp>
+	</Header>
+	<MiningBuildTask>
+		<Extension>PMMLPipeline(steps=[('regressor', RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=None,
+           max_features='auto', max_leaf_nodes=None,
+           min_impurity_decrease=0.0, min_impurity_split=None,
+           min_samples_leaf=1, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=None,
+           oob_score=False, random_state=None, verbose=0, warm_start=False))])</Extension>
+	</MiningBuildTask>
+	<DataDictionary>
+		<DataField name="y" optype="continuous" dataType="double"/>
+		<DataField name="x1" optype="continuous" dataType="float"/>
+		<DataField name="x2" optype="continuous" dataType="float"/>
+	</DataDictionary>
+	<TransformationDictionary>
+		<DerivedField name="double(x1)" optype="continuous" dataType="double">
+			<FieldRef field="x1"/>
+		</DerivedField>
+		<DerivedField name="double(x2)" optype="continuous" dataType="double">
+			<FieldRef field="x2"/>
+		</DerivedField>
+	</TransformationDictionary>
+	<MiningModel functionName="regression">
+		<MiningSchema>
+			<MiningField name="y" usageType="target"/>
+			<MiningField name="x1"/>
+			<MiningField name="x2"/>
+		</MiningSchema>
+		<Segmentation multipleModelMethod="average">
+			<Segment id="1">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction" splitCharacteristic="multiSplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+						<MiningField name="x2"/>
+					</MiningSchema>
+					<Node score="71.75728155339806">
+						<True/>
+						<Node score="97.0">
+							<SimplePredicate field="double(x1)" operator="lessOrEqual" value="24.0"/>
+							<Node score="158.0">
+								<SimplePredicate field="double(x2)" operator="lessOrEqual" value="8.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="2">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction" splitCharacteristic="multiSplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+						<MiningField name="x2"/>
+					</MiningSchema>
+					<Node score="70.83253588516746">
+						<True/>
+						<Node score="97.0">
+							<SimplePredicate field="double(x1)" operator="lessOrEqual" value="24.0"/>
+							<Node score="158.0">
+								<SimplePredicate field="double(x2)" operator="lessOrEqual" value="8.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="3">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction" splitCharacteristic="multiSplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+						<MiningField name="x2"/>
+					</MiningSchema>
+					<Node score="69.83248730964468">
+						<True/>
+						<Node score="97.375">
+							<SimplePredicate field="double(x1)" operator="lessOrEqual" value="24.0"/>
+							<Node score="158.0">
+								<SimplePredicate field="double(x2)" operator="lessOrEqual" value="8.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="4">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction" splitCharacteristic="multiSplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+						<MiningField name="x2"/>
+					</MiningSchema>
+					<Node score="70.78817733990148">
+						<True/>
+						<Node score="97.25">
+							<SimplePredicate field="double(x1)" operator="lessOrEqual" value="24.0"/>
+							<Node score="158.0">
+								<SimplePredicate field="double(x2)" operator="lessOrEqual" value="8.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="5">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction" splitCharacteristic="multiSplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+						<MiningField name="x2"/>
+					</MiningSchema>
+					<Node score="70.16915422885572">
+						<True/>
+						<Node score="97.33333333333333">
+							<SimplePredicate field="double(x1)" operator="lessOrEqual" value="24.0"/>
+							<Node score="158.0">
+								<SimplePredicate field="double(x2)" operator="lessOrEqual" value="8.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="6">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction" splitCharacteristic="multiSplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+						<MiningField name="x2"/>
+					</MiningSchema>
+					<Node score="70.14778325123153">
+						<True/>
+						<Node score="97.5">
+							<SimplePredicate field="double(x1)" operator="lessOrEqual" value="24.0"/>
+							<Node score="158.0">
+								<SimplePredicate field="double(x2)" operator="lessOrEqual" value="8.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="7">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction" splitCharacteristic="multiSplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+						<MiningField name="x2"/>
+					</MiningSchema>
+					<Node score="71.26">
+						<True/>
+						<Node score="97.16666666666667">
+							<SimplePredicate field="double(x1)" operator="lessOrEqual" value="24.0"/>
+							<Node score="158.0">
+								<SimplePredicate field="double(x2)" operator="lessOrEqual" value="8.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="8">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction" splitCharacteristic="multiSplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+						<MiningField name="x2"/>
+					</MiningSchema>
+					<Node score="71.7910447761194">
+						<True/>
+						<Node score="97.66666666666667">
+							<SimplePredicate field="double(x1)" operator="lessOrEqual" value="24.0"/>
+							<Node score="158.0">
+								<SimplePredicate field="double(x2)" operator="lessOrEqual" value="8.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="9">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction" splitCharacteristic="multiSplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+						<MiningField name="x2"/>
+					</MiningSchema>
+					<Node score="72.80582524271844">
+						<True/>
+						<Node score="97.0">
+							<SimplePredicate field="double(x1)" operator="lessOrEqual" value="24.0"/>
+							<Node score="158.0">
+								<SimplePredicate field="double(x2)" operator="lessOrEqual" value="8.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="10">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction" splitCharacteristic="multiSplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+						<MiningField name="x2"/>
+					</MiningSchema>
+					<Node score="70.65238095238095">
+						<True/>
+						<Node score="97.5">
+							<SimplePredicate field="double(x1)" operator="lessOrEqual" value="24.0"/>
+							<Node score="158.0">
+								<SimplePredicate field="double(x2)" operator="lessOrEqual" value="8.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+		</Segmentation>
+	</MiningModel>
+</PMML>
